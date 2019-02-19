@@ -1,0 +1,48 @@
+﻿@page
+@model EntAppSecond.Pages.FormWsModel
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "FormWs";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+
+}
+<form method="post">
+
+    <div class="row">
+        <div class="col-sm-12" style="background-color:silver;border:2px solid black;text-align:center">
+            <label asp-for=ProductCode></label>
+            <input type="text" asp-for=ProductCode />
+            <label id="yellow" asp-for=Color>Yellow</label>
+            <input id="yellow" value="yellow" type="radio" asp-for=Color />
+            <label id="black" asp-for=Color>Black</label>
+            <input id="black" value="black" type="radio" asp-for=Color />
+            <label id="red" asp-for=Color>Red</label>
+            <input id="red" value="black" type="radio" asp-for=Color />
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-sm-12" style="text-align:center;background-color:white;border:solid white">
+            <label asp-for=Consent></label>
+            <input type="checkbox" asp-for=Consent>
+        </div>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
+<form method="post" action="~/FormWs_Links1">
+    <input type="hidden" value="@Model.ProductCode" asp-for=ProductCode />
+    <input type="hidden" value="@Model.Color" asp-for=Color />
+    <button type="submit" class="btn-link">Next Page</button>
+</form>
+
+    <h1>@Model.Message</h1>
+
+
+
+
+
