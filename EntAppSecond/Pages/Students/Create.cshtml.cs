@@ -22,6 +22,7 @@ namespace EntAppSecond.Pages.Students
 
         public void OnPost()
         {
+           
 
         }
     }
